@@ -16,7 +16,7 @@ import UIKit
 /// 1st param: responseData to JS
 public typealias SWVBResponseCallBack = (NSDictionary) -> Void
 /// 1st param: jsonData sent from JS; 2nd param: responseCallback for sending data back to JS
-public typealias SWVBHandler = (AnyObject, SWVBResponseCallBack) -> Void
+public typealias SWVBHandler = (AnyObject, @escaping SWVBResponseCallBack) -> Void
 /// Dictionary to hold handlers for swift calling
 public typealias SWVBHandlerDic = [String: SWVBHandler]
 /// Dictionary to store the JS callback in the Swift side(Only pass the uniqueId to JS for the callback)
