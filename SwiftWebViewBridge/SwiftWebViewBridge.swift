@@ -187,7 +187,7 @@ extension SwiftWebViewBridge {
             // Swift callback(after JS finished designated handler called by Swift)
             if let swvbMsgData = swvbMsg["data"] as? SWVBData, let responseId = swvbMsgData["responseId"] as? String {
                 if let callback = self.jsCallbacks[responseId] {
-                    if let responseData = swvbMsg["responseData"] != nil ? swvbMsg["responseData"] : NSNull() {
+                    if let responseData = swvbMsgData["responseData"] != nil ? swvbMsgData["responseData"] : NSNull() {
                         callback(responseData as! NSDictionary)
                     }
                     self.jsCallbacks.removeValue(forKey: responseId)
